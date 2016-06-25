@@ -1,0 +1,21 @@
+<%= form_for(@swift_api_key) do |f| %>
+  <% if @swift_api_key.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@swift_api_key.errors.count, "error") %> prohibited this swift_api_key from being saved:</h2>
+
+      <ul>
+      <% @swift_api_key.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :key %><br>
+    <%= f.text_field :key %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
